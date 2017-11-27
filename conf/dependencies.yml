@@ -1,0 +1,21 @@
+# Application dependencies 
+require:
+    - play
+    # 默认引用play 1.x 仓库中的模块
+    #- play -> bespin 1.0.1
+    #- play -> crud
+    # 引用maven仓库的模块
+    - com.fasterxml.jackson.core -> jackson-databind 2.9.2
+    - com.qiniu -> qiniu-java-sdk 7.2.4
+    - org.apache.poi -> poi 3.16
+    - org.apache.poi -> poi-ooxml 3.16
+
+#repositories:
+    # 自定义maven  或ivysettings.xml中配置后 项目中不需要另行配置
+    #- nexus:
+        #type: iBiblio
+        #root: "http://maven.local.com/nexus/content/groups/public/"
+        #contains:
+            #- com.* -> *
+            #- cn.* -> *
+            #- org.* -> *

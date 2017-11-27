@@ -1,0 +1,52 @@
+# BASE
+*		/                                       	Application.index
+
+# ADMIN 管理端
+*		/admin										admin.Application.index
+*		/admin/version								admin.Application.version
+*		/admin/configData							admin.Application.configData
+*		/admin/incrementData						admin.Application.incrementData
+*		/admin/areaData							    admin.Application.areaData
+*		/admin/qiniu/uptoken						admin.Application.qiniuUptoken
+*		/admin/qiniu/uptoken/simple					admin.Application.qiniuUptokenSimple
+*		/admin/admin/login							admin.AdminController.login
+*		/admin/admin/logout							admin.AdminController.logout
+*		/admin/admin/info							admin.AdminController.info
+
+# USER 用户端
+*		/user										user.Application.index
+*		/user/version								user.Application.version
+*		/user/configData							user.Application.configData
+*		/user/incrementData							user.Application.incrementData
+*		/user/areaData							    user.Application.areaData
+*		/user/qiniu/uptoken							user.Application.qiniuUptoken
+*		/user/qiniu/uptoken/simple					user.Application.qiniuUptokenSimple
+*		/user/person/captcha						user.PersonController.captcha
+*		/user/person/regist							user.PersonController.regist
+*		/user/person/login							user.PersonController.login
+*		/user/person/logout							user.PersonController.logout
+*		/user/person/info							user.PersonController.info
+*		/user/person/edit							user.PersonController.edit
+*		/user/person/phone/bind						user.PersonController.bindPhone
+*		/user/person/email/bind						user.PersonController.bindEmail
+*		/user/person/password/forget				user.PersonController.forgetPassword
+*		/user/person/password/validate				user.PersonController.validatePassword
+*		/user/person/password/reset					user.PersonController.resetPassword
+
+# MOBILE 移动端
+*		/mobile										mobile.Application.index
+
+# BACK 后台开发
+*		/back										back.Application.index	
+*		/back/{action}								back.Application.{action}	
+*		/back/auth/{action}							back.AuthController.{action}	
+*		/back/person/{action}						back.PersonController.{action}	
+
+# STATIC
+GET     /favicon.ico                            	404
+GET		/readme                     				staticFile:README.html
+GET     /public/                                	staticDir:public
+GET     /tmp/                                   	staticDir:tmp
+
+# ALL
+*       /{controller}/{action}                  	{controller}.{action}

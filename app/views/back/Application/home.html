@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>后台-主页</title>
+<link rel="stylesheet" href="@{'/public/layui/css/layui.css'}">
+</head>
+<body>
+	<div class="layui-layout layui-layout-admin">
+		<div class="layui-header">
+			<div class="layui-logo">后台管理系统</div>
+			<!-- 头部区域（可配合layui已有的水平导航） -->
+			<ul class="layui-nav layui-layout-right">
+				<li class="layui-nav-item"><a href="javascript:;"><img
+						src="${person.avatar}" class="layui-nav-img"> ${person.username} </a>
+					<dl class="layui-nav-child">
+						<dd>
+							<a href="">基本资料</a>
+						</dd>
+						<dd>
+							<a href="">安全设置</a>
+						</dd>
+						<dd>
+							<a href="/back/logout">退出</a>
+						</dd>
+					</dl></li>
+			</ul>
+		</div>
+
+		<div class="layui-side layui-bg-black">
+			<div class="layui-side-scroll">
+				<!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+				<ul class="layui-nav layui-nav-tree" lay-filter="nav">
+					#{if access.contains("105")}
+					<li class="layui-nav-item" data="person"><a href="javascript:;">用户管理</a></li>
+					#{/if}
+					<li class="layui-nav-item" data="config"><a href="javascript:;">系统管理</a>
+						<dl class="layui-nav-child">
+							#{if access.contains("101")}
+							<dd data="auth">
+								<a href="javascript:;">权限管理</a>
+							</dd>
+							#{/if}
+							<dd data="config">
+								<a href="javascript:;">系统设置</a>
+							</dd>
+						</dl>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="layui-body">
+			<!-- 内容主体区域 -->
+				<div class="layui-tab layui-tab-card" lay-allowClose="true"
+					lay-filter="tab">
+					<ul class="layui-tab-title"> 
+					</ul>
+					<div class="layui-tab-content">
+					</div>
+				</div>
+		</div>
+
+		<div class="layui-footer">
+			<!-- 底部固定区域 -->
+			© copyright
+		</div>
+	</div>
+	<script src="@{'/public/layui/layui.all.js'}"></script>
+	<script src="https://unpkg.com/wangeditor/release/wangEditor.min.js"></script>
+	#{include 'back/Application/tpls.html' /}
+	#{include 'back/Application/tpl_auth.html' /}
+	#{include 'back/Application/tpl_person.html'/}
+	<script src="@{'/public/back/js/back.js'}"></script>
+	<script src="@{'/public/back/js/auth.js'}"></script>
+	<script src="@{'/public/back/js/person.js'}"></script>
+</body>
+</html>

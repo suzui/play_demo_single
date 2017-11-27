@@ -1,0 +1,48 @@
+server.pid
+
+# IDE and editors
+*~
+.idea
+nbproject
+eclipse
+.amateras
+.settings
+.classpath
+.project
+*.iml
+*.ipr
+*.iws
+.pydevproject
+.metadata
+.DS_Store
+*.orig
+
+# play logs and tmp
+logs
+logs/*
+log
+log/*
+tmp
+tmp/*
+
+# play compile
+/precompiled
+
+# play test result
+test-result
+
+# japid created java files
+conf/japid*
+app/japidviews/*/*.java
+app/japidviews/*/*/*.java
+app/japidviews/*/*/*/*.java
+!app/japidviews/_javatags/*.java
+
+# everyone should keep their own conf files
+conf/application.conf
+lib/*
+modules/*
+cobertura.*
+bin
+bin/*
+commit.txt
